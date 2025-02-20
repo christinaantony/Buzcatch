@@ -1,7 +1,17 @@
 <?php
 include '../db.php';
 
+header("Access-Control-Allow-Origin: *");  // Allow access from any origin (for development)
+header("Access-Control-Allow-Methods: POST"); // Specify allowed methods
+header("Access-Control-Allow-Headers: Content-Type, Access-Control - Allow-Headers, Authorization, X-Request-with"); // Allow necessary headers
 header("Content-Type: application/json");
+
+$requestMethod = $_SERVER["REQUEST_METHOD"];
+
+if($requestMethod == "POST") {
+
+
+
 
 
 $data = json_decode(file_get_contents("php://input"), true);
@@ -31,5 +41,15 @@ if ($stmt->execute()) {
     // header("Location: ../login.html");
 } else {
     echo json_encode(["error" => "Failed to register student"]);
+}
+}
+else 
+{
+ $data = [
+    'status' => 405,
+    'message' => $requestMethod. 'Method Not Allowed',
+ ];
+ header("HTTP/1.0 405 Method Not Allowed");
+ echo json_encode($data);
 }
 ?>

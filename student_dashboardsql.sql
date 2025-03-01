@@ -27,25 +27,25 @@ SET time_zone = "+00:00";
 -- Table structure for table `company`
 --
 
-CREATE TABLE `company` (
-  `id` int(11) NOT NULL,
-  `company_name` varchar(255) NOT NULL,
-  `company_address` varchar(255) NOT NULL,
-  `place` varchar(100) NOT NULL,
-  `email_id` varchar(255) NOT NULL,
-  `mobile_number` varchar(15) NOT NULL,
-  `userid` int(11) NOT NULL,
-  `ip_address` varchar(50) NOT NULL,
-  `thumbnail_image` varchar(255) NOT NULL,
-  `joining_date` date NOT NULL DEFAULT curdate(),
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+--CREATE TABLE `company` (
+ -- `id` int(11) NOT NULL,
+  --`company_name` varchar(255) NOT NULL,
+  --`company_address` varchar(255) NOT NULL,
+  --`place` varchar(100) NOT NULL,
+  --`email_id` varchar(255) NOT NULL,
+  --`mobile_number` varchar(15) NOT NULL,
+  --`userid` int(11) NOT NULL,
+  --`ip_address` varchar(50) NOT NULL,
+  --`thumbnail_image` varchar(255) NOT NULL,
+  --`joining_date` date NOT NULL DEFAULT curdate(),
+  --`created_at` timestamp NOT NULL DEFAULT current_timestamp()
+--) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `company`
 --
 
-INSERT INTO `company` (`id`, `company_name`, `company_address`, `place`, `email_id`, `mobile_number`, `userid`, `ip_address`, `thumbnail_image`, `joining_date`, `created_at`) VALUES
+INSERT IGNORE INTO `company` (`id`, `company_name`, `company_address`, `place`, `email_id`, `mobile_number`, `userid`, `ip_address`, `thumbnail_image`, `joining_date`, `created_at`) VALUES
 (1, 'Wipro', 'Kerala', 'TVM', 'wipro@gmail.com', '9815089036', 37, '142.187.1.1', 'image7.jpg', '2025-02-27', '2025-02-27 07:11:23'),
 (2, 'TCS', 'Kerala', 'TVM', 'TCS@gmail.com', '9815089036', 39, '142.187.1.1', 'image7.jpg', '2025-02-27', '2025-02-27 07:11:40'),
 (3, 'Infosys', 'Kerala', 'kochi', 'Infosys@gmail.com', '9815089036', 39, '142.187.1.1', 'image7.jpg', '2025-02-27', '2025-02-27 07:12:02'),
